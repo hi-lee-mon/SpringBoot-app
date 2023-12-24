@@ -1,0 +1,45 @@
+header {
+  display:flex;
+  align-items:center;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+}
+
+h1 {
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+  flex: 1;
+  justify-content: center;
+}
+
+nav a {
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+/* ナビゲーションリンクのホバー時のスタイル */
+nav a:hover {
+  opacity: 0.7;
+}
+
+.header-title{
+  text-decoration: none;
+  font-weight: bold;
+  color:#1A1A1C;
+  transition: all 0.2s;
+}
+
+.header-title:hover {
+  color: inherit; /* ホバー時に色を変更しない */
+  opacity: 0.7;
+}
+
+.main-area {
+  /* padding: 20px; */
+}

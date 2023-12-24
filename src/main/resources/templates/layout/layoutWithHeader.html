@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout/rootLayout}"
+>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="description" content="common-meta">
+  <link th:href="@{/css/layoutWithHeader.css}" rel="stylesheet" type="text/css">
+  <title>layout With Header</title>
+</head>
+<body>
+  <div layout:fragment="rootLayout">
+    <header>
+        <h1><a th:href="@{/}" class="header-title">書籍管理</a></h1>
+        <nav th:if="${#authorization.expression('isAuthenticated()')}">
+            <a href="#">書籍一覧</a>
+            <a href="#">借りる/返す</a>
+            <a href="#">ランキング</a>
+            <a href="#">問い合わせ</a>
+        </nav>
+        <!-- ログイン中のユーザ名 -->
+        <strong class="me-2" sec:authorize="isAuthenticated()">
+          <span class sec:authentication="name"></span>
+        </strong> 
+        <form method="POST" th:action="@{/logout}" th:if="${#authorization.expression('isAuthenticated()')}">
+          <button type="submit" class="btn btn-primary">ログアウト</button>
+        </form>
+    </header>
+    <main layout:fragment="layoutWithHeader" class="p-3">
+      <!--{children}-->
+    </main>
+  </div>
+</body>
+</html>
