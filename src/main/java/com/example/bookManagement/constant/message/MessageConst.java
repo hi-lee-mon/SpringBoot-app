@@ -1,4 +1,4 @@
-package com.example.bookManagement.constant;
+package com.example.bookManagement.constant.message;
 
 /**
  * メッセージID定数クラス

@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.example.bookManagement.constant.ErrorMessageConst;
-import com.example.bookManagement.constant.MessageConst;
 import com.example.bookManagement.constant.UrlConst;
 import com.example.bookManagement.constant.ViewNameConst;
+import com.example.bookManagement.constant.message.ErrorMessageConst;
+import com.example.bookManagement.constant.message.MessageConst;
 import com.example.bookManagement.entity.UserInfo;
 import com.example.bookManagement.feature.signup.form.SignupForm;
 import com.example.bookManagement.feature.signup.service.SignupService;

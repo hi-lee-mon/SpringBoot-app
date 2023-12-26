@@ -1,4 +1,4 @@
-package com.example.bookManagement.constant;
+package com.example.bookManagement.constant.message;
 
 public class ValidationMessageConst {
   /**ユーザ登録画面：ログインID桁数エラー*/

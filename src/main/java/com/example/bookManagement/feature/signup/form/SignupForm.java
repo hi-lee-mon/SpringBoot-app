@@ -3,7 +3,7 @@ package com.example.bookManagement.feature.signup.form;
 
 import org.hibernate.validator.constraints.Length;
 
-import com.example.bookManagement.constant.ValidationMessageConst;
+import com.example.bookManagement.constant.message.ValidationMessageConst;
 
 import lombok.Data;
 
