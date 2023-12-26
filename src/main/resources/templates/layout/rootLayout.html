@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="description" content="common-meta">
+  <!-- スマートフォン表示するなら必須の設定 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>root layout</title>
+</head>
+<body>
+  <div th:insert="~{global/sourceList :: sourceList}"></div>
+  <div th:insert="~{global/messageIcon :: messageIcon}"></div>
+  <div id="root-area" layout:fragment="rootLayout" class="container">
+    <!--{children}-->
+  </div>
+</body>
+</html>

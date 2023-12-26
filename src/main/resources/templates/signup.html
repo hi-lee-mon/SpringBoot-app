@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html 
+	lang="jp"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+	layout:decorate="~{layout/layoutWithHeader}"
+>
+
+<head>
+	<meta charset="UTF-8">
+	<title>ユーザ登録画面</title>
+</head>
+
+<body>
+	<div layout:fragment="layoutWithHeader">
+		<div class="alert d-flex align-items-center" role="alert" th:if="${message != null}" th:classappend="|${isError ? 'alert-danger' : 'alert-primary'}|">
+			<svg class="bi flex-shrink-0 me-2" width="24" height="24">
+				<use xlink:href="#exclamation-triangle-fill" th:if="${isError}"/>
+				<use xlink:href="#info-fill" th:unless="${isError}"/>
+			</svg>
+			<div th:text="${message}"></div>
+		</div>
+		<div class="container mt-5">
+			<div class="row justify-content-center">
+				<div class="col-md-6">
+					<div class="card">
+						<div class="card-header">
+							<h5 class="card-title">ユーザ登録</h5>
+						</div>
+						<div class="card-body">
+							<form  method="POST" th:action="@{/signup}" th:object="${signupForm}">
+								<div class="mb-3">
+									<label for="userId" class="form-label">ユーザID</label>
+									<input type="text" class="form-control" placeholder="yamada" th:field="*{userId}">
+									<span class="text-danger" th:if="${#fields.hasErrors('userId')}" th:errors="*{userId}"></span>
+								</div>
+								<div class="mb-3">
+									<label for="password" class="form-label">パスワード</label>
+									<input type="password" class="form-control" th:field="*{password}">
+									<span class="text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
+								</div>
+								<div class="d-grid">
+									<button type="submit" class="btn btn-primary">登録</button>
+								</div>
+							</form>
+						</div>
+						<div class="card-footer text-muted">
+							既にアカウントをお持ちの方はこちらへ<a th:href="@{/login}">ログイン</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
